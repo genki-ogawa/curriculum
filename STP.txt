@@ -1,0 +1,49 @@
+問1
+ルートブリッジ：switch3
+
+問2
+【switch1 F0/1】
+ルートブリッジへの経路がswitch1-switch2-switch4-switch3のためルートパスコストは19+100+100=219
+switch2 F0/1がルートポート（RP）のため指定ポート（DP）
+
+【switch1 F0/2】
+ルートブリッジへの経路がSwitch1-swiitch3のためルートパスコストは100
+switch1 F0/1よりルートパスコストが小さいためルートポート（RP）
+
+
+【switch2 F0/1】
+ルートブリッジへの経路がswitch2-switch1-switch3のためルートパスコストは19+100=119
+switch2 F0/2よりルートパスコストが小さいためルートポート（RP）
+
+
+【switch2 F0/2】
+ルートブリッジへの経路がswitch2-switch4-switch3のためルートパスコストは100+100=200
+ルートポート（RP）、指定ポート（DP）のどちらにも選出されなかったためブロッキングポート（BP）
+
+
+【switch3 E0/1】
+ルートブリッジのため、指定ポート（DP）
+
+
+【switch3 E0/2】
+ルートブリッジのため、指定ポート（DP）
+
+
+【switch4 E0/1】
+ルートブリッジへの経路がswitch4-switch2-switch1-switch3のためルートパスコストは100+19+100=219
+switch2 F0/2よりブリッジIDが小さい（8193）ため指定ポート（DP）
+
+
+【switch4 E0/2】
+ルートブリッジへの経路がSwitch4-swiitch3のためルートパスコストは100
+switch4 F0/1よりルートパスコストが小さいためルートポート（RP）
+
+
+（ショートパスコスト）
+switch1-switch2：お互いにファストイーサネットのため100Mbbps＝19
+
+switch1-switch3：速度が遅い方（イーサネット）に合わせるため10Mbps=10
+
+switch2-switch4：速度が遅い方（イーサネット）に合わせるため10Mbps=10
+
+switch3-switch4：お互いにイーサネットのため10Mbps=10
